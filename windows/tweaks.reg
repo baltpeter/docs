@@ -1,0 +1,54 @@
+Windows Registry Editor Version 5.00
+; Inspired by https://www.tweakhound.com/2015/12/09/tweaking-windows-10/18/ and https://ss64.com/nt/syntax-reghacks.html
+
+; Start menu speed - the default is 400
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="50"
+
+; Don't show the search bar in the taskbar as we have classic shell
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search]
+"SearchboxTaskbarMode"=dword:00000000
+
+; Disable Cortana
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"AllowCortana"=dword:00000000
+
+; When opening files with an unknown extension, dont prompt to 'Look for an app in the store' (for all users)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoUseStoreOpenWith"=dword:00000001
+
+; Display verbose messages during login (Group policy, profile loading etc)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"verbosestatus"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+; Disable 'Show recently used files in quick cccess'
+"ShowRecent"=dword:00000000
+
+; Disable 'Show frequently used folders in quick cccess'
+"ShowFrequent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+; Show all folders
+"NavPaneShowAllFolders"=dword:00000001
+
+; Show hidden files and folders
+"Hidden"=dword:00000001
+
+; Show system files
+"ShowSuperHidden"=dword:00000001
+
+; Don't hide file extensions
+"HideFileExt"=dword:00000000
+
+; Don't 'pretty' (aka break) path names
+"DontPrettyPath"=dword:00000001
+
+; Don't show notifications/adverts (OneDrive & new feature alerts) in Windows Explorer
+"ShowSyncProviderNotifications"=dword:00000000
+
+; Disable 'Show recently opened items in jump lists on Start or the taskbar'
+"Start_TrackDocs"=dword:00000000
+
+; Open Explorer to 'This PC'
+"LaunchTo"=dword:00000001
