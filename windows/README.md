@@ -2,15 +2,15 @@
 
 ## Install common software
 
-First, install [Chocolatey](https://chocolatey.org/install). Then, install the default packages using `choco install packages.config` in an admin `cmd`.
+First, install [Chocolatey](https://chocolatey.org/install). Then run `choco feature enable -n allowGlobalConfirmation` to disable prompting for every package. Finally, install the default packages using `choco install packages.config` in an admin `cmd`.
 
 ## Uninstall bloatware
 
-If not already using an appropriately preconfigured image, uninstall bloatware.
+In an elevated command prompt, run `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/baltpeter/system-docs/master/windows/uninstall-bloatware.ps1'))"`.
 
-Start a PowerShell as administator and run `Set-ExecutionPolicy -ExecutionPolicy Unrestricted`. This will enable running scripts. After the setup is done, feel free to reset it using `Set-ExecutionPolicy Undefined`.
+## Privacy settings
 
-Run the PowerShell script `uninstall-bloatware.ps1` by right-clicking and selecting `Run with PowerShell`.
+Apply the recommended settings from [O&O ShutUp 10](https://www.oo-software.com/en/shutup10) for better privacy settings. The program is already installed through Chocolatey and you can simply run `oosu10`.
 
 ## Settings
 
