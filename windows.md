@@ -10,6 +10,11 @@
 * `cleanmgr`: Disk cleanup
 * `devmgmt.msc`: Device manager
 
+## Keyboard shortcuts
+
+* Win + Ctrl + Shift + B: [Restart graphics driver](https://www.reddit.com/r/AskReddit/comments/a22ivq/what_is_the_most_useful_windows_keyboard_shortcut/eav2qyb/)
+* Crtl + Alt + [Up/Right/Down/Left]: [Rotate screen](https://www.howtogeek.com/356816/how-to-rotate-your-pcs-screen-or-fix-a-sideways-screen/)
+
 ## Links
 
 * [List of `ms-settings` URIs](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app#ms-settings-uri-scheme-reference) ([alternative resource](https://winaero.com/blog/open-various-settings-pages-directly-in-windows-10-anniversary-update/))
