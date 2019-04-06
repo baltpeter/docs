@@ -12,8 +12,8 @@
 
 ## Keyboard shortcuts
 
-* Win + Ctrl + Shift + B: [Restart graphics driver](https://www.reddit.com/r/AskReddit/comments/a22ivq/what_is_the_most_useful_windows_keyboard_shortcut/eav2qyb/)
-* Crtl + Alt + [Up/Right/Down/Left]: [Rotate screen](https://www.howtogeek.com/356816/how-to-rotate-your-pcs-screen-or-fix-a-sideways-screen/)
+* [Restart graphics driver](https://www.reddit.com/r/AskReddit/comments/a22ivq/what_is_the_most_useful_windows_keyboard_shortcut/eav2qyb/): Win + Ctrl + Shift + B
+* [Rotate screen](https://www.howtogeek.com/356816/how-to-rotate-your-pcs-screen-or-fix-a-sideways-screen/): Ctrl + Alt + [Up/Right/Down/Left]
 
 ## Links
 
