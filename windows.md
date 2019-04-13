@@ -3,12 +3,18 @@
 ## Run commands
 
 * `appwiz.cpl`: Programs and features
-* `netplwiz`: Local user accounts
+* `lusrmgr.msc`: Local users and groups
+* `netplwiz`: Local user accounts (not useful on Windows Server)
 * `powercfg.cpl`: Power options
 * `ncpa.cpl`: Network connections ('Change adapter settings')
+* `desk.cpl`: Display setting (resolution, screens, etc.)
 * `ms-settings:`: Windows 10 settings (see below for a list of sub URIs)
 * `cleanmgr`: Disk cleanup
 * `devmgmt.msc`: Device manager
+* `gpedit.msc`: Group policy editor
+* `sysdm.cpl`: System properties
+* `firewall.cpl`: Windows Defender firewall settings
+* `main.cpl`: Mouse settings
 
 ## Keyboard shortcuts
 
