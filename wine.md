@@ -13,3 +13,10 @@ wineboot -u
 winetricks fontsmooth=rgb gdiplus vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015 msxml3 msxml6 atmlib allfonts
 winecfg # Set to Win 7
 ```
+
+## Useful commands
+
+* `wineboot -r`: 'Reboot' the prefix
+* `wineserver -k`: Kill all programs running in the prefix
+* `winefile`: Wine file manager
+* `wine start [explorer|taskmgr|…]`: Start the corresponding program
