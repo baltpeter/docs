@@ -1,4 +1,4 @@
-# Setting up Ubuntu (18.10) machines
+# Setting up Ubuntu (19.04) machines
 
 ## Update system
 
@@ -63,19 +63,22 @@ Install the [Firefox addon](https://extensions.gnome.org/) and make sure the she
 
 Install the following extensions:
 
+* https://extensions.gnome.org/extension/1160/dash-to-panel/
 * https://extensions.gnome.org/extension/517/caffeine/
 * https://extensions.gnome.org/extension/600/launch-new-instance/
 * https://extensions.gnome.org/extension/18/native-window-placement/
 * https://extensions.gnome.org/extension/750/openweather/
-* https://extensions.gnome.org/extension/8/places-status-indicator/
-* https://extensions.gnome.org/extension/7/removable-drive-menu/
 * https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-* https://extensions.gnome.org/extension/602/window-list/
-* https://extensions.gnome.org/extension/921/multi-monitors-add-on/
 * https://extensions.gnome.org/extension/19/user-themes/
 * https://extensions.gnome.org/extension/1236/noannoyance/
 * https://extensions.gnome.org/extension/120/system-monitor/ (has dependencies: `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0`)
 * https://extensions.gnome.org/extension/118/no-topleft-hot-corner/
+* https://extensions.gnome.org/extension/1430/contrast-ratio/ (has dependency: `apt install grabc`)
+* https://extensions.gnome.org/extension/1228/arc-menu/
+* https://extensions.gnome.org/extension/779/clipboard-indicator/ (Disable *Show notification on copy* and *Keyboard shortcuts* in the settings.)
+
+Configure *Dash to Panel* as follows: Under *Position* and *Multi-monitor options*, enable *Isolate monitors* and disable *Display favorite applications on all monitors*. Under *Style*, set the *Panel Size* to 40. Under *Behavior*, disable *Show favorite applications*, disable *Show Applications button*, enable *Isolate Workspaces* and enable *Ungroup applications*. Under the *Window preview options*, set *Time (ms) before showing* to 1000. Under *Fine-Tune*, disable *Animate switching applications* and *Animate launching new windows* and enable *Activate panel menu buttons (e.g. date menu) on click only*.
+These settings can also be imported from the file `configs/dash-to-panel`.
 
 ## Gnome theme
 
@@ -100,12 +103,12 @@ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
-echo "deb https://download.virtualbox.org/virtualbox/debian cosmic contrib" | tee /etc/apt/sources.list.d/virtualbox.list
+echo "deb https://download.virtualbox.org/virtualbox/debian disco contrib" | tee /etc/apt/sources.list.d/virtualbox.list
 curl -s https://syncthing.net/release-key.txt | apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
 apt update
 
-apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing
+apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential
 apt install --install-recommends winehq-stable winetricks
 snap install spotify whatsdesk
 snap install hugo --channel=extended
@@ -123,13 +126,14 @@ chmod a+rx /usr/local/bin/youtube-dl
 add-apt-repository ppa:sebastian-stenzel/cryptomator
 add-apt-repository ppa:x2go/stable
 add-apt-repository ppa:unit193/encryption
+add-apt-repository ppa:peek-developers/stable
 apt update
 
-apt install keepassxc cryptomator blender x2goclient chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra mediathekview binwalk hashcat steam
+apt install keepassxc cryptomator blender x2goclient chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra mediathekview binwalk hashcat steam peek
 snap install insomnia veracrypt
 flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpakref
 
-lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4  
+lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4
 ```
 
 ## Syncthing
