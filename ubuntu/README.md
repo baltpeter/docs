@@ -14,6 +14,10 @@ Install the *1Password X* Firefox addon and login.
 
 Next, signin to *Firefox Sync*.
 
+Go into the Firefox preferences. Under *General* and *Browsing*, select *Use autoscrolling*.
+
+Note for the future: If scrolling becomes laggy, try [this solution](https://bugzilla.mozilla.org/show_bug.cgi?id=594876#c104).
+
 ## Setup environment
 
 Get rid of the Amazon integration by running: `apt purge ubuntu-web-launchers`
@@ -93,6 +97,8 @@ In the *Gnome Tweak Tool*, under *Appearance*, select *Yaru* for all theme optio
 
 In a terminal, go into *Edit* and *Preferences*. Under the unnamed profile and *Colors*, uncheck *Use colors from system theme* and select *Tango Dark* under *Built-in schemes*.
 
+## Install software
+
 ### Essentials
 
 ```sh
@@ -157,9 +163,3 @@ systemctl --user start syncthing.service
 Increate the inotify limit: `echo "fs.inotify.max_user_watches=204800" | tee -a /etc/sysctl.conf`
 
 The web UI is then available at `http://127.0.0.1:8384/`.
-
-## Firefox
-
-Go into the Firefox preferences. Under *General* and *Browsing*, select *Use autoscrolling*.
-
-Note for the future: If scrolling becomes laggy, try [this solution](https://bugzilla.mozilla.org/show_bug.cgi?id=594876#c104).
