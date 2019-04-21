@@ -55,6 +55,12 @@ PasswordAuthentication no
 UseDNS no
 ```
 
+In `/etc/ssh/ssh_config`, comment out the following directive to [disable forwarding the locale to remote servers](https://askubuntu.com/a/530829):
+
+```
+#   SendEnv LANG LC_*
+```
+
 Then, restart the SSH server: `service ssh restart`
 
 ## Gnome extensions
@@ -76,6 +82,7 @@ Install the following extensions:
 * https://extensions.gnome.org/extension/1430/contrast-ratio/ (has dependency: `apt install grabc`)
 * https://extensions.gnome.org/extension/1228/arc-menu/
 * https://extensions.gnome.org/extension/779/clipboard-indicator/ (Disable *Show notification on copy* and *Keyboard shortcuts* in the settings.)
+* https://extensions.gnome.org/extension/21/workspace-indicator/
 
 Configure *Dash to Panel* as follows: Under *Position* and *Multi-monitor options*, enable *Isolate monitors* and disable *Display favorite applications on all monitors*. Under *Style*, set the *Panel Size* to 40. Under *Behavior*, disable *Show favorite applications*, disable *Show Applications button*, enable *Isolate Workspaces* and enable *Ungroup applications*. Under the *Window preview options*, set *Time (ms) before showing* to 1000. Under *Fine-Tune*, disable *Animate switching applications* and *Animate launching new windows* and enable *Activate panel menu buttons (e.g. date menu) on click only*.
 These settings can also be imported from the file `configs/dash-to-panel`.
