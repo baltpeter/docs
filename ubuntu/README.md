@@ -14,9 +14,23 @@ Install the *1Password X* Firefox addon and login.
 
 Next, signin to *Firefox Sync*.
 
-Go into the Firefox preferences. Under *General* and *Browsing*, select *Use autoscrolling*.
+Go into the Firefox preferences. Under *General* and *Browsing*, select *Use autoscrolling* (or set `general.autoScroll` to `true` in `about:config`).
 
 Note for the future: If scrolling becomes laggy, try [this solution](https://bugzilla.mozilla.org/show_bug.cgi?id=594876#c104).
+
+Configure the following settings in `about:config`:
+
+* [Mouse click behavior in URL bar](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Mouse_click_on_URL_bar.27s_behavior):  
+    Set `browser.urlbar.doubleClickSelectsAll` to `false`.
+* [Disable middle-click pasting](https://wiki.archlinux.org/index.php/Firefox#Middle-click_behavior):  
+    Set `middlemouse.paste` to `false`.
+* [Make Firefox use a non-dark content theme](https://github.com/DmitriK/darkContrast#text-contrast-for-dark-themes):  
+    Create a new string key called `widget.content.gtk-theme-override` and set it to `Yaru`. Also set `browser.display.use_system_colors` to `false` (see [here](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK.2B_themes)).
+* Force enable hardware acceleration ([1](https://support.mozilla.org/en-US/questions/1232970), [2](https://www.reddit.com/r/firefox/comments/8hmnn7/firefox_gpu_acceleration_on_linux/dylmtsn/), [3](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)) (experimental):
+    Set `layers.acceleration.force-enabled`, `layers.omtp.enabled`, `layout.display-list.retain`, `gfx.xrender.enabled` and `layers.force-active` to `true`.  
+    Maybe also consider [enabling the Servo renderer](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_WebRender) in the future.
+* [Enable additional media codecs](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_additional_media_codecs):  
+    Set `media.av1.enabled` to `true`. Create a new boolean key called `media.mediasource.ignore_codecs` and set it to `true`.
 
 ## Setup environment
 
@@ -93,9 +107,11 @@ These settings can also be imported from the file `configs/dash-to-panel`.
 
 ## Gnome theme
 
-In the *Gnome Tweak Tool*, under *Appearance*, select *Yaru* for all theme options.
+In the *Gnome Tweak Tool*, under *Appearance*, select *Adwaita-dark* for *Applications* and *Yaru* for all other theme options.
 
 In a terminal, go into *Edit* and *Preferences*. Under the unnamed profile and *Colors*, uncheck *Use colors from system theme* and select *Tango Dark* under *Built-in schemes*.
+
+Maybe consider also [styling QT](https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications) in the future.
 
 ## Install software
 
