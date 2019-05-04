@@ -27,7 +27,7 @@ Configure the following settings in `about:config`:
 * [Make Firefox use a non-dark content theme](https://github.com/DmitriK/darkContrast#text-contrast-for-dark-themes):  
     Create a new string key called `widget.content.gtk-theme-override` and set it to `Yaru`. Also set `browser.display.use_system_colors` to `false` (see [here](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK.2B_themes)).
 * Force enable hardware acceleration ([1](https://support.mozilla.org/en-US/questions/1232970), [2](https://www.reddit.com/r/firefox/comments/8hmnn7/firefox_gpu_acceleration_on_linux/dylmtsn/), [3](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)) (experimental):
-    Set `layers.acceleration.force-enabled`, `layers.omtp.enabled`, `layout.display-list.retain`, `gfx.xrender.enabled` and `layers.force-active` to `true`.  
+    Set `layers.omtp.enabled`, `layout.display-list.retain`, `gfx.xrender.enabled` to `true`.  
     Maybe also consider [enabling the Servo renderer](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_WebRender) in the future.
 * [Enable additional media codecs](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_additional_media_codecs):  
     Set `media.av1.enabled` to `true`. Create a new boolean key called `media.mediasource.ignore_codecs` and set it to `true`.

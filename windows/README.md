@@ -2,7 +2,7 @@
 
 ## Install common software
 
-First, install [Chocolatey](https://chocolatey.org/install). Then run `choco feature enable -n allowGlobalConfirmation` to disable prompting for every package. Finally, install the default packages using `choco install packages.config` in an admin `cmd`.
+First, install [Chocolatey](https://chocolatey.org/install). Then run `choco feature enable -n allowGlobalConfirmation` to disable prompting for every package. Finally, install the default packages using `choco install packages.config` (optionally also install the additional packages from `packages-additional.config`) in an admin `cmd`.
 
 ## Uninstall bloatware
 
