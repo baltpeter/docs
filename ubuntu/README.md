@@ -79,6 +79,12 @@ In `/etc/ssh/ssh_config`, comment out the following directive to [disable forwar
 #   SendEnv LANG LC_*
 ```
 
+and disable `known_hosts` hashing:
+
+```
+HashKnownHosts no
+```
+
 Then, restart the SSH server: `service ssh restart`
 
 ## Gnome extensions
