@@ -59,6 +59,15 @@ In the Terminal, go to *Edit* and *Preferences*. Under the unnamed profile and t
 * In the settings dialog, under *Devices* and *Mouse & Touchpad*, select *Natural Scrolling* and bump the *Mouse Speed* to the maximum value. Under *Search*, disable *Passwords and Keys* and *Ubuntu Software*. Under *Devices* and *Displays*, enable *Night Light*. Under *Privacy* and *Usage & History*, disable *Recently Used*.
 * In the *gedit* preferences, under *View*, select *Display line numbers*, *Highlight current line* and *Highlight matching brackets*. Under *Editor*, set the *Tab width* to 4 and select *Insert spaces instead of tabs* and *Enable automatic indentation*. Under *Fonts & Colors*, select *Solarized Dark* as the *Color Scheme*. Under *Plugins*, enable *Quick Highlight*.
 
+### GPG
+
+[Mitigate SKS key server problems](https://gist.github.com/rjhansen/67ab921ffb4084c865b3618d6955275f#mitigations):
+
+1. In `~/.gnupg/gpg.conf`, ensure there is no line starting with `keyserver`. If there is, remove it.
+2. Add the line `keyserver hkps://keys.openpgp.org` to the end of `~/.gnupg/dirmngr.conf`.
+
+**TODO:** Investigate [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh).
+
 ## SSH
 
 Generate an SSH key using `ssh-keygen -o -a 100 -t ed25519` (see [here](https://blog.g3rt.nl/upgrade-your-ssh-keys.html)). Upload the corresponding public key to: GitLab, GitHub
@@ -141,9 +150,10 @@ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key a
 echo "deb https://download.virtualbox.org/virtualbox/debian disco contrib" | tee /etc/apt/sources.list.d/virtualbox.list
 curl -s https://syncthing.net/release-key.txt | apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
+add-apt-repository ppa:bit-team/stable
 apt update
 
-apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential
+apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential backintime-qt4
 apt install --install-recommends winehq-stable winetricks
 snap install spotify whatsdesk
 snap install hugo --channel=extended
@@ -165,13 +175,28 @@ add-apt-repository ppa:peek-developers/stable
 apt update
 
 apt install keepassxc cryptomator blender x2goclient chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra mediathekview binwalk hashcat steam peek
+apt install texlive texlive-lang-german texlive-latex-extra texlive-generic-extra latexmk texlive-xetex
 snap install insomnia veracrypt
 flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpakref
 
 lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4
 ```
 
-## Syncthing
+## Backups
+
+### Back In Time
+
+**TODO:** Currently not in use.
+
+Run Back In Time as root. Under *General*, set *Where to save snapshots* to `/mnt/backintime` and set the schedule to *Repeatedly (anachron)* and every hour. Under *Include*, add `/`. Under *Auto-remove*, enable *Smart remove* with the default settings.
+
+### Vorta
+
+**TODO:** Backup to `backup1` using [Vorta](https://github.com/borgbase/vorta).
+
+### Syncthing
+
+**TODO:** Syncthing is currently not in use.
 
 Set Syncthing to start automatically:
 
@@ -182,6 +207,6 @@ systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 ```
 
-Increate the inotify limit: `echo "fs.inotify.max_user_watches=204800" | tee -a /etc/sysctl.conf`
+Increase the inotify limit: `echo "fs.inotify.max_user_watches=204800" | tee -a /etc/sysctl.conf`
 
 The web UI is then available at `http://127.0.0.1:8384/`.
