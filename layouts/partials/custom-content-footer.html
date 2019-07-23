@@ -1,0 +1,19 @@
+<footer class="footline">
+    {{ with .GitInfo }}
+    <div style="float: left;">
+        Last change to this page: <a href="https://github.com/baltpeter/docs/commit/{{ .Hash }}">“{{ .Subject }}”</a>
+        (<code>{{ .AbbreviatedHash }}</code>)
+        <br>by <em>{{ .AuthorName }}</em> at {{ $.Lastmod }}
+        {{ if $.Site.Params.historyURL }}
+        <a href="{{ $.Site.Params.historyURL }}{{ replace $.File.Dir "\\" "/" }}{{ $.File.LogicalName }}"
+            target="blank">(view history)</a>
+        {{end}}
+    </div>
+    {{ end }}
+    <div style="float: right;">
+        <a href="https://benjamin-altpeter.de/contact#license">
+            <img src="/icons/cc-by.svg" alt="License information" style="margin: 0; height: 15px;">
+        </a>
+    </div>
+    <div style="clear: both;"></div>
+</footer>

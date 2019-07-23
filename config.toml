@@ -1,0 +1,53 @@
+languageCode = "en-us"
+title = "docs.benjamin-altpeter.de"
+# TODO: I am not to happy with that theme. It looks quite nice but is way too heavy and not at all responsive…
+theme = "docdock"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsUseClasses = true
+enableGitInfo = true
+pluralizeListTitles = false
+preserveTaxonomyNames = true
+canonifyURLs = true
+
+[Author]
+name = "Benjamin Altpeter"
+email = "hi@bn.al"
+
+[params]
+editURL = "https://github.com/baltpeter/docs/edit/master/content/"
+historyURL = "https://github.com/baltpeter/docs/commits/master/content/"
+showVisitedLinks = false
+themeStyle = "original"
+themeVariant = "blue"
+ordersectionsby = "weight"
+disableHomeIcon = true
+disableSearch = false
+disableNavChevron = true
+highlightClientSide = false
+menushortcutsnewtab = false
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-arrow-left rm-10'></i><label>back to benjamin-altpeter.de</label>"
+identifier = "back"
+url = "https://benjamin-altpeter.de"
+pre = "<hr>"
+weight = 0
+[[menu.shortcuts]]
+name = "<i class='fa fa-github rm-10'></i><label>Github repo</label>"
+identifier = "github"
+url = "https://github.com/baltpeter/docs"
+weight = 10
+[[menu.shortcuts]]
+name = "<i class='fa fa-file rm-10'></i><label>Privacy policy</label>"
+identifier = "privacypolicy"
+url = "https://benjamin-altpeter.de/privacy"
+weight = 20
+[[menu.shortcuts]]
+name = "<i class='fa fa-address-book rm-10'></i><label>Legal notice & contact details</label>"
+identifier = "legalnotice"
+url = "https://benjamin-altpeter.de/contact"
+weight = 30

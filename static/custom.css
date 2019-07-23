@@ -1,0 +1,36 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: none;
+}
+
+code {
+    white-space: pre-wrap;
+}
+
+#body-inner {
+    max-width: 960px;
+    margin: auto;
+}
+
+#sidebar {
+    width: 350px;
+}
+#sidebar ul li div a {
+    width: 100%;
+}
+
+section#shortcuts {
+    margin-top: 50px;
+}
+
+footer > div {
+    margin-top: 10px;
+}
+
+.rm-10 {
+    margin-right: 10px;
+}
