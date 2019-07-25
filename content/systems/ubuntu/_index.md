@@ -132,7 +132,7 @@ Maybe consider also [styling QT](https://wiki.archlinux.org/index.php/Uniform_lo
 
 ## Install software
 
-### Essentials
+### Essential
 
 ```sh
 dpkg --add-architecture i386
@@ -167,7 +167,7 @@ curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-
 chmod a+rx /usr/local/bin/youtube-dl
 ```
 
-### Additionals
+### Optional
 
 ```sh
 add-apt-repository ppa:sebastian-stenzel/cryptomator
@@ -176,7 +176,7 @@ add-apt-repository ppa:unit193/encryption
 add-apt-repository ppa:peek-developers/stable
 apt update
 
-apt install keepassxc cryptomator blender x2goclient chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra mediathekview binwalk hashcat steam peek
+apt install keepassxc cryptomator blender x2goclient chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra mediathekview binwalk hashcat steam peek qtcreator qt5-default
 apt install texlive texlive-lang-german texlive-latex-extra texlive-generic-extra latexmk texlive-xetex
 snap install insomnia veracrypt
 flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpakref
