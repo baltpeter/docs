@@ -65,3 +65,16 @@ This version however unfortunately doesn't work on Ubuntu because they use the *
     # but unfortunately, Ubuntu uses `/bin/dash` as `/bin/sh` and that doesn't support that expansion. :(
     fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
 ```
+
+## Staging only parts of a file
+
+Sometimes, you don't want to `git add` a whole file but only a part of it. This can be done using `git add -p` which will then interactively ask you which parts to stage.
+
+Possible commands for each hunk are ([1](https://nuclearsquid.com/writings/git-add/#git-add-patch)):
+
+* `y`: Add this hunk
+* `n`: Don't this hunk
+* `d`: Skip the rest of the file
+* `s`: Split into smaller hunks (only works if there are unchanged lines in-between)
+* `e`: Edit hunk in editor  
+  When editing, make sure that each line starts with one of these characters: ` ` (unchanged line), `-` (remove line), `+` (add line).
