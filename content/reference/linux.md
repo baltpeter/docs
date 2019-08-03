@@ -12,3 +12,7 @@ NFS mounts can be tricky. After an NFS request times out, NFS request are retrie
 Use the mount option `soft` to limit the number of retries to 3.
 
 If an NFS share hangs, it can be unmounted as follows: Find the mount point using `mount` and then `umount -f -l [mount point]` (`-f` for force and `-l` for lazy unmount, i.e. detach now and cleanup references later) ([2](https://askubuntu.com/a/292365))
+
+## Ubuntu
+
+* Night light not working correctly: Try `killall gsd-color` ([1](https://askubuntu.com/a/1075340))
