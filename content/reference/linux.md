@@ -16,3 +16,7 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 ## Ubuntu
 
 * Night light not working correctly: Try `killall gsd-color` ([1](https://askubuntu.com/a/1075340))
+
+## Grep
+
+* Find files *not* containing a string: `grep -L [string] [files]` (e.g. `grep -L foo *`)
