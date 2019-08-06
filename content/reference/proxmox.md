@@ -18,3 +18,45 @@ See [reference/linux](/reference/linux#nfs-mounts) for how to deal with unrespon
 
 To set the `soft` mount option in Proxmox, edit `/etc/pve/storage.cfg` and set `options vers=3,soft` for the applicable mounts. ([1](https://forum.proxmox.com/threads/nfs-share-dead-backups-frozen.11033/#post-60777))
 
+## LXC container not starting
+
+### Failed to create veth pair
+
+Error message when starting in foreground:
+
+```
+lxc-start: 1001015: network.c: instantiate_veth: 106 Operation not permitted - Failed to create veth pair "veth1001015i0" and "veth6AIO43"
+lxc-start: 1001015: network.c: lxc_create_network_priv: 2462 Failed to create network device
+lxc-start: 1001015: start.c: lxc_spawn: 1646 Failed to create the network
+lxc-start: 1001015: start.c: __lxc_start: 1989 Failed to spawn container "1001015"
+lxc-start: 1001015: tools/lxc_start.c: main: 330 The container failed to start
+lxc-start: 1001015: tools/lxc_start.c: main: 336 Additional information can be obtained by setting the --logfile and --logpriority options
+```
+
+Try ([1](https://carolinafernandez.github.io/deployment/2018/03/11/Find-remove-veth-for-LXC)):
+
+```sh
+# Lookup the name of the veth associated with the affected VM.
+cat /var/lib/lxc/[id]/config
+# There will be a line like this: `lxc.net.0.veth.pair = veth1001015i0`
+
+# Delete that veth.
+ip link delete [veth1001015i0]
+```
+
+If that doesn't work, restart the node.
+
+### Failed to create cgroup
+
+Error message when starting in foreground:
+
+```
+lxc-start: 1001015: cgroups/cgfsng.c: mkdir_eexist_on_last: 1301 File exists - Failed to create directory "/sys/fs/cgroup/systemd//lxc/1001015"
+lxc-start: 1001015: cgroups/cgfsng.c: container_create_path_for_hierarchy: 1353 Failed to create cgroup "/sys/fs/cgroup/systemd//lxc/1001015"
+lxc-start: 1001015: cgroups/cgfsng.c: cgfsng_payload_create: 1526 Failed to create cgroup "/sys/fs/cgroup/systemd//lxc/1001015"
+```
+
+Try: `rm -rf /sys/fs/cgroup/systemd/lxc/[id]`  
+Note that there may also be additional directories (`[id]-1` etc.)
+
+If that doesn't work, restart the node.
