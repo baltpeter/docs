@@ -12,6 +12,10 @@ title: Proxmox
 * Start LXC container in foreground (useful for debugging start problems): `lxc-start [id] -F`
 * Stop an unresponsive backup: `vzdump -stop` ([1](https://forum.proxmox.com/threads/proxmox-backup-wont-stop.23219/#post-116382)) or `ps aux | grep vzdump`, `kill -9 [pid]` and then `pct unlock [vmid]` ([2](https://forum.proxmox.com/threads/proxmox-backup-wont-stop.23219/#post-116383))
 
+## Adding a new disk
+
+In the interface, go to the node and the *Disks* tab. Select the disk and click *Initialize disk with GPT*. Next, go to the *LVM-Thin* tab and click *Create: Thinpool*. Select the disk, give it a name, make sure *Add Storage* is checked and click *Create*.
+
 ## NFS mounts
 
 See [reference/linux](/reference/linux#nfs-mounts) for how to deal with unresponsive NFS mounts.
