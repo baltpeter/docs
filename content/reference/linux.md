@@ -20,3 +20,7 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 ## Grep
 
 * Find files *not* containing a string: `grep -L [string] [files]` (e.g. `grep -L foo *`)
+
+## Disks
+
+* Remove filesystems on a disk: `wipefs -a /dev/sd[x]` ([1](https://askubuntu.com/a/825032))
