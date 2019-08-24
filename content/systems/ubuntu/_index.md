@@ -106,15 +106,11 @@ Install the following extensions:
 
 * https://extensions.gnome.org/extension/1160/dash-to-panel/
 * https://extensions.gnome.org/extension/517/caffeine/
-* https://extensions.gnome.org/extension/600/launch-new-instance/
-* https://extensions.gnome.org/extension/18/native-window-placement/
 * https://extensions.gnome.org/extension/750/openweather/
 * https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 * https://extensions.gnome.org/extension/19/user-themes/
 * https://extensions.gnome.org/extension/1236/noannoyance/
 * https://extensions.gnome.org/extension/120/system-monitor/ (has dependencies: `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0`)
-* https://extensions.gnome.org/extension/118/no-topleft-hot-corner/
-* https://extensions.gnome.org/extension/1430/contrast-ratio/ (has dependency: `apt install grabc`)
 * https://extensions.gnome.org/extension/1228/arc-menu/
 * https://extensions.gnome.org/extension/779/clipboard-indicator/ (Disable *Show notification on copy* and *Keyboard shortcuts* in the settings.)
 * https://extensions.gnome.org/extension/21/workspace-indicator/
