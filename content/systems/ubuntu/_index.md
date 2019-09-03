@@ -151,7 +151,7 @@ echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.li
 add-apt-repository ppa:bit-team/stable
 apt update
 
-apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential backintime-qt4 whois
+apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential backintime-qt4 whois gnome-contacts evolution
 apt install --install-recommends winehq-stable winetricks
 snap install spotify whatsdesk
 snap install hugo --channel=extended
@@ -181,6 +181,15 @@ flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpak
 
 lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4
 ```
+
+## Calendar and contact sync with Nextcloud
+
+Gnome Calendar and Contacts can sync with CalDAV and CardDAV servers, they just don't expose that functionality through their UI. Instead, the servers need to be added to Evolution. ([1](https://www.ctrl.blog/entry/gnome-caldav.html))
+
+To add the CalDAV server (for use in Gnome Calendar), open Evolution and in the *File* menu under *New*, click *Calendar*. Select the type *CalDAV*. Enter the calendar's *Name* and select a *Color*. Then enter the calendar's link for the *URL* and specify the *User*. Click *Apply*. ([2](https://help.gnome.org/users/evolution/stable/calendar-caldav.html.en))  
+If 2FA is enabled for Nextcloud, create a new app password to use.
+
+To add the CardDAV server (for use in Gnome Contacts), open Evolution and in the *File* menu under *new*, click *Address Book*. Select the type *CardDAV*. Specify a *Name* and the *URL*.
 
 ## Backups
 
