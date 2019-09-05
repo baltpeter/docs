@@ -61,6 +61,18 @@ In the Terminal, go to *Edit* and *Preferences*. Under the unnamed profile and t
 * In the settings dialog, under *Devices* and *Mouse & Touchpad*, select *Natural Scrolling* and bump the *Mouse Speed* to the maximum value. Under *Search*, disable *Passwords and Keys* and *Ubuntu Software*. Under *Devices* and *Displays*, enable *Night Light*. Under *Privacy* and *Usage & History*, disable *Recently Used*.
 * In the *gedit* preferences, under *View*, select *Display line numbers*, *Highlight current line* and *Highlight matching brackets*. Under *Editor*, set the *Tab width* to 4 and select *Insert spaces instead of tabs* and *Enable automatic indentation*. Under *Fonts & Colors*, select *Solarized Dark* as the *Color Scheme*. Under *Plugins*, enable *Quick Highlight*.
 
+### Nemo instead of Nautilus (Gnome Files)
+
+```sh
+apt install nemo nemo-fileroller
+```
+
+In the preferences, in the *Views* tab under *Default View*, set *View new folders using* to *List view*. In the *Display* tab under *Window and Tab Titles*, enable *Show the full path in the title bar and tab bars*. In the *Preview* tab under *Tooltips*, enable *Show tooltips in list views* and all additional options available. In the *Toolbar* tab under *Options*, enable *Show refresh button* and *Show new folder button*.
+
+In the *View* menu, enable *Show hidden files*.
+
+**TODO:** Investigate how to install the `nemo-preview` and `nemo-media-columns` extensions ([bug](https://launchpad.net/bugs/1828290)).
+
 ### GPG
 
 [Mitigate SKS key server problems](https://gist.github.com/rjhansen/67ab921ffb4084c865b3618d6955275f#mitigations):
