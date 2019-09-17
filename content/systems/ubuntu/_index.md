@@ -133,7 +133,7 @@ In the Terminal, go to *Edit* and *Preferences*. Under the unnamed profile and t
 * Install the *Gnome Tweak Tool*: `apt install gnome-tweak-tool`
 * In the *Gnome Tweak Tool*, under *Top Bar*, select *Weekday*, *Seconds*, and *Week Numbers*. Under *Windows*, deselect *Attach Modal Dialogs*. Under *Workspaces*, select *Workspaces om primary display only*. :(
 * [Disable the dock](https://www.linuxuprising.com/2018/08/how-to-remove-or-disable-ubuntu-dock.html): `gsettings set org.gnome.shell.extensions.dash-to-dock autohide false && gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false && gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false`
-* In the settings dialog, under *Devices* and *Mouse & Touchpad*, select *Natural Scrolling* and bump the *Mouse Speed* to the maximum value. Under *Search*, disable *Passwords and Keys* and *Ubuntu Software*. Under *Devices* and *Displays*, enable *Night Light*. Under *Privacy* and *Usage & History*, disable *Recently Used*.
+* In the settings dialog, under *Devices* and *Mouse & Touchpad*, bump the *Mouse Speed* to the maximum value. Under *Search*, disable *Passwords and Keys* and *Ubuntu Software*. Under *Devices* and *Displays*, enable *Night Light*. Under *Privacy* and *Usage & History*, disable *Recently Used*.
 * In the *gedit* preferences, under *View*, select *Display line numbers*, *Highlight current line* and *Highlight matching brackets*. Under *Editor*, set the *Tab width* to 4 and select *Insert spaces instead of tabs* and *Enable automatic indentation*. Under *Fonts & Colors*, select *Solarized Dark* as the *Color Scheme*. Under *Plugins*, enable *Quick Highlight*.
 
 ### GPG
