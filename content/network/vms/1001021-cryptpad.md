@@ -69,10 +69,11 @@ The releases usually contain *Update notes* with special steps that need to be f
 
 ```sh
 cd /root/cryptpad
+systemctl stop cryptpad.service
 git pull
 npm update
 bower update --allow-root
-systemctl restart cryptpad.service
+systemctl start cryptpad.service
 ```
 
 To easily check if there are new/changed config values: `diff /root/cryptpad/config/config.example.js /root/cryptpad/config/config.js -y --color=always`
