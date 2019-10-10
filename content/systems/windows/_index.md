@@ -8,7 +8,7 @@ First, install [Chocolatey](https://chocolatey.org/install). Then run `choco fea
 
 ## Uninstall bloatware
 
-In an elevated command prompt, run `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/baltpeter/system-docs/master/windows/uninstall-bloatware.ps1'))"`.
+In an elevated command prompt, run `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/baltpeter/docs/master/content/systems/windows/uninstall-bloatware.ps1'))"`.
 
 ## Privacy settings
 
