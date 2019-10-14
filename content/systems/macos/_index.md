@@ -35,3 +35,10 @@ In the *Finder* preferences, under *General*, set *New Finder windows show* to t
 In the *Finder* menubar, under *View*, select *Show Tab Bar*, *Show Path Bar*, *Show Status Bar* and *Show Preview*.
 
 [Show hidden files](https://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/): `defaults write com.apple.finder AppleShowAllFiles YES`
+
+### Font smoothing
+
+```sh
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+```
