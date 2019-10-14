@@ -64,3 +64,13 @@ Try: `rm -rf /sys/fs/cgroup/systemd/lxc/[id]`
 Note that there may also be additional directories (`[id]-1` etc.)
 
 If that doesn't work, restart the node.
+
+## Removing a node from the cluster
+
+This will also work for removing the second node from a two-node cluster and thus effectively reverting to an un-clustered setup ([1](https://forum.proxmox.com/threads/proxmox-cluster-2-nodes-how-to-remove-one-node-and-use-only-one.22983/#post-115588)).
+
+1. List the nodes using `pvecm nodes` to find out the name of the node to remove.
+2. Shutdown the node to remove. Make sure it never gets reconnected.
+3. On the remaining node: Regain quorum via `pvecm expected 1`.
+4. Remove the node from the cluster using `pvecm delnode [nodename]`.
+5. If the node still shows up in the UI, run `rm -rf /etc/pve/nodes/[nodename]` ([2](https://forum.proxmox.com/threads/cluster-node-stuck-in-ui.42330/#post-203778)), then reload the webpage.
