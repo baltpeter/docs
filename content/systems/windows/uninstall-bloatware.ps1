@@ -68,17 +68,23 @@ Write-Host "[Benni_win10-unprovision] " -ForegroundColor Blue -NoNewline
 Write-Host Unprovisioning Windows 10 bloatware...
 foreach ($app in $ToRemove) {
     Write-Host "[Benni_win10-unprovision] " -ForegroundColor Blue -NoNewline
-    Write-Host Unprovisioning $app...
+    Write-Host Unprovisioning $app…
     Get-AppxProvisionedPackage -Online | where DisplayName -like $app | Remove-AppxProvisionedPackage -Online
 }
+Write-Host "[Benni_win10-unprovision] " -ForegroundColor Blue -NoNewline
+Write-Host Unprovisioning all remaining non-Microsoft apps…
+Get-AppxProvisionedPackage -Online | where Publisher -notlike *Microsoft* | Remove-AppxProvisionedPackage -Online
 Write-Host "[Benni_win10-unprovision] " -ForegroundColor Blue -NoNewline
 Write-Host Done.
 
 
-Write-Host "[Benni_clean-win10] " -ForegroundColor Blue -NoNewline
+Write-Host "[Benni_win10-clean] " -ForegroundColor Blue -NoNewline
 Write-Host Removing Windows 10 bloatware...
 foreach ($app in $ToRemove) {
     Get-AppxPackage $app | Remove-AppxPackage
 }
-Write-Host "[Benni_clean-win10] " -ForegroundColor Blue -NoNewline
+Write-Host "[Benni_win10-clean] " -ForegroundColor Blue -NoNewline
+Write-Host Removing all remaining non-Microsoft apps…
+Get-AppxPackage | where Publisher -notlike *Microsoft* | Remove-AppxPackage
+Write-Host "[Benni_win10-clean] " -ForegroundColor Blue -NoNewline
 Write-Host Done.
