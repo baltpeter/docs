@@ -48,7 +48,13 @@ $ToRemove =
     "*Facebook*",
     "*Amazon*",
     "*Pandora*",
-    "*Flipboard*"
+    "*Flipboard*",
+    "*Spotify*",
+    "*king.com*",
+    "*Disney*",
+    "*Dolby*",
+    "*Phototastic*",
+    "*Gardenscapes*"
 
 $confirmation = Read-Host "Also uninstall the Windows Store? [y/n]"
 if ($confirmation -eq 'y') {
