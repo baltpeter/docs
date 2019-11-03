@@ -259,6 +259,12 @@ lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localho
 
 ## Calendar and contact sync with Nextcloud
 
+In the settings dialog under *Online Accounts*, add a Nextcloud account. If 2FA is enabled for Nextcloud, create a new app password before.
+
+### Legacy
+
+**Note:** These instructions are not necessary anymore. Instead, follow the steps above.
+
 Gnome Calendar and Contacts can sync with CalDAV and CardDAV servers, they just don't expose that functionality through their UI. Instead, the servers need to be added to Evolution. ([1](https://www.ctrl.blog/entry/gnome-caldav.html))
 
 To add the CalDAV server (for use in Gnome Calendar), open Evolution and in the *File* menu under *New*, click *Calendar*. Select the type *CalDAV*. Enter the calendar's *Name* and select a *Color*. Then enter the calendar's link for the *URL* and specify the *User*. Click *Apply*. ([2](https://help.gnome.org/users/evolution/stable/calendar-caldav.html.en))  
