@@ -228,7 +228,7 @@ apt update
 
 apt install curl telegram-desktop vlc sublime-text audacity gimp inkscape flatpak xdg-desktop-portal xdg-desktop-portal-gtk ffmpeg handbrake-gtk gnome-boxes virtualbox-6.0 albert units gparted nodejs yarn imagemagick pandoc wireshark gnome-sushi nfs-common wngerman syncthing build-essential backintime-qt4 whois gnome-contacts evolution exa
 apt install --install-recommends winehq-stable winetricks
-snap install spotify whatsdesk
+snap install spotify
 snap install hugo --channel=extended
 snap install skype --classic
 flatpak install flathub org.gnome.FeedReader
