@@ -6,5 +6,5 @@ These are the parameters to use when cutting various materials with my [vinyl pl
 
 ## T-shirt vinyl ("Flexfolie")
 
-* Speed: 350 mm/s  
-* Power: 150 g
+* Speed: 200 mm/s  
+* Power: 180 g
