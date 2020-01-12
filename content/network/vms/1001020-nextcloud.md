@@ -10,7 +10,7 @@ TBD, through the snap package
 
 ## Updates
 
-Nextcloud should be updated automatically through the snap?
+Nextcloud is updated automatically through the snap.
 
 ## Backups
 
