@@ -96,6 +96,8 @@ server {
         ssl_certificate_key /etc/letsencrypt/live/matrix.altpeter.me/privkey.pem;
         ssl_trusted_certificate /etc/letsencrypt/live/matrix.altpeter.me/fullchain.pem;
 
+        client_max_body_size 2G;
+
         location /_matrix {
                 proxy_set_header X-Forwarded-For $remote_addr;
                 proxy_pass http://localhost:8008;
