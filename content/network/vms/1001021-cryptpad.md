@@ -55,6 +55,7 @@ module.exports = {
     adminKeys: [
         "https://cryptpad.my-server.in/user/#/1/baltpeter/id"
     ],
+    httpSafeOrigin: 'https://cryptpad-sandbox.my-server.in',
     allowSubscriptions: false,
     adminEmail: 'name@mail.tld',
     defaultStorageLimit: 50 * 1024 * 1024 * 1024,
