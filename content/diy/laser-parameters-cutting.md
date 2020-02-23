@@ -40,7 +40,7 @@ bought from [here](https://www.ebay.de/itm/152749442896), very fragile
 
 ### Poplar plywood (4 mm)
 
-* Power: 60%
-* Speed: 9 mm/s
+* Power: 80%
+* Speed: 7 mm/s
 * Air: yes
 * Masking: yes
