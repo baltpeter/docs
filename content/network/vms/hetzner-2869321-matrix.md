@@ -167,6 +167,17 @@ database:
 enable_registration: false
 
 suppress_key_server_warning: true
+
+# The email settings don't currently work and cause the service to crash on startup for some reason. :(
+# email:
+#     enable_notifs: true 
+#     smtp_host: "smtp.eu.mailgun.org"
+#     smtp_port: 587 # SSL: 465, STARTTLS: 587
+#     smtp_user: "synapse@mail.altpeter.me"
+#     smtp_pass: "pass"
+#     require_transport_security: true 
+#     notif_from: "Synapse on matrix.altpeter.me <noreply@mail.altpeter.me>"
+#     app_name: Matrix
 ```
 
 Then, choose `Z` to start a shell, run `nano /etc/matrix-synapse/homeserver.yaml.dpkg-new` to edit the (new) config and reenter the old values.
