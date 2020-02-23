@@ -145,6 +145,14 @@ In the Terminal, go to *Edit* and *Preferences*. Under the unnamed profile and t
 
 **TODO:** Investigate [parcimonie.sh](https://github.com/EtiennePerot/parcimonie.sh).
 
+### NTP
+
+For fun, set the NTP servers used to the ones offered by the [PTB](https://www.ptb.de/cms/en/ptb/fachabteilungen/abtq/gruppe-q4/ref-q42/time-synchronization-of-computers-using-the-network-time-protocol-ntp.html) ([1](https://askubuntu.com/a/844996)):
+
+In `/etc/systemd/timesyncd.conf`, uncomment the `#NTP=` line and change it to: `NTP=ptbtime1.ptb.de ptbtime2.ptb.de ptbtime3.ptb.de`
+
+Force a re-sync using `systemctl restart systemd-timesyncd` and finally check that the servers have been set correctly using `systemctl status systemd-timesyncd.service`.
+
 ## SSH
 
 Generate an SSH key using `ssh-keygen -o -a 100 -t ed25519` (see [here](https://blog.g3rt.nl/upgrade-your-ssh-keys.html)). Upload the corresponding public key to: GitLab, GitHub
