@@ -4,7 +4,10 @@ title: Linux
 
 ## Gnome
 
-* Restart shell: Alt + F2 -> r
+* For restarting the shell, try in this order ([1](https://wiki.archlinux.org/index.php/GNOME/Troubleshooting#Shell_freezes)):
+    - Alt + F2 -> r
+    - `pkill -HUP gnome-shell` in another TTY (should not logout the user on X11)
+    - `systemctl restart gdm` (will logout the user)
 
 ## NFS mounts
 
