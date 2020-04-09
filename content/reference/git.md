@@ -9,6 +9,7 @@ title: Git
     # See below, depends on the system.
     # fixup = …
 
+    fdiff = !sh -c 'git diff --color "$@" | diff-so-fancy'
     co = checkout
     cob = checkout -b
     # Checkout a GitHub PR, taken from: https://github.com/lee-dohm/dotfiles/blob/8d3c59004154571578c2b32df2cdebb013517630/gitconfig#L8, see: https://github.community/t5/How-to-use-Git-and-GitHub/Checkout-a-branch-from-a-fork/td-p/77
@@ -21,6 +22,28 @@ title: Git
     bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
 
     oops = !git commit --amend --no-edit
+```
+
+## `diff-so-fancy`
+
+Install `diff-so-fancy` ([1](https://github.com/so-fancy/diff-so-fancy/blob/8728c8badd72995f515b247da938e163d959cdf6/README.md)) and configure the `fdiff` alias as described above. 
+
+```sh
+sudo npm install -g diff-so-fancy
+
+git config --global color.ui true
+
+git config --global color.diff-highlight.oldNormal    "red bold"
+git config --global color.diff-highlight.oldHighlight "red bold 52"
+git config --global color.diff-highlight.newNormal    "green bold"
+git config --global color.diff-highlight.newHighlight "green bold 22"
+
+git config --global color.diff.meta       "11"
+git config --global color.diff.frag       "magenta bold"
+git config --global color.diff.commit     "yellow bold"
+git config --global color.diff.old        "red bold"
+git config --global color.diff.new        "green bold"
+git config --global color.diff.whitespace "red reverse"
 ```
 
 ## Merging multiple repositories into one
