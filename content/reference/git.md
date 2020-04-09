@@ -2,6 +2,27 @@
 title: Git
 ---
 
+## Aliases
+
+```
+[alias]
+    # See below, depends on the system.
+    # fixup = …
+
+    co = checkout
+    cob = checkout -b
+    # Checkout a GitHub PR, taken from: https://github.com/lee-dohm/dotfiles/blob/8d3c59004154571578c2b32df2cdebb013517630/gitconfig#L8, see: https://github.community/t5/How-to-use-Git-and-GitHub/Checkout-a-branch-from-a-fork/td-p/77
+    copr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
+
+    # Taken from: https://haacked.com/archive/2014/07/28/github-flow-aliases/
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    # Delete merged branches, taken from: https://haacked.com/archive/2014/07/28/github-flow-aliases/
+    bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+
+    oops = !git commit --amend --no-edit
+```
+
 ## Merging multiple repositories into one
 
 With these instructions, you can combine the histories of multiple Git repositories into a single one. Adapted after [this guide](https://saintgimp.org/2013/01/22/merging-two-git-repositories-into-one-repository-without-losing-file-history/) by SaintGimp.
