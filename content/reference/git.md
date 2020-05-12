@@ -10,9 +10,17 @@ title: Git
     # fixup = …
 
     fdiff = !sh -c 'git diff --color "$@" | diff-so-fancy'
+
     co = checkout
     cob = checkout -b
     com = checkout master
+    s = status
+    c = commit
+    cm = commit -m
+    r = rebase
+    rc = rebase --continue
+    ra = rebase --abort
+
     # Checkout a GitHub PR, taken from: https://github.com/lee-dohm/dotfiles/blob/8d3c59004154571578c2b32df2cdebb013517630/gitconfig#L8, see: https://github.community/t5/How-to-use-Git-and-GitHub/Checkout-a-branch-from-a-fork/td-p/77
     copr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
 
