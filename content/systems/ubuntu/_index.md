@@ -149,7 +149,7 @@ echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbunt
 wget -qO- https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ cosmic main'
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
