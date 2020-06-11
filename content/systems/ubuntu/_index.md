@@ -12,6 +12,13 @@ apt install unattended-upgrades apt-transport-https && dpkg-reconfigure unattend
 
 ## Firefox
 
+Install Firefox Nightly:
+
+```sh
+add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+apt install firefox-trunk
+```
+
 Install the *1Password X* Firefox addon and login.
 
 Next, signin to *Firefox Sync*.
@@ -22,17 +29,10 @@ Note for the future: If scrolling becomes laggy, try [this solution](https://bug
 
 Configure the following settings in `about:config`:
 
-* [Mouse click behavior in URL bar](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Mouse_click_on_URL_bar.27s_behavior):  
-    Set `browser.urlbar.doubleClickSelectsAll` to `false`.
 * [Disable middle-click pasting](https://wiki.archlinux.org/index.php/Firefox#Middle-click_behavior):  
     Set `middlemouse.paste` to `false`.
-* [Make Firefox use a non-dark content theme](https://github.com/DmitriK/darkContrast#text-contrast-for-dark-themes):  
-    Create a new string key called `widget.content.gtk-theme-override` and set it to `Yaru`. Also set `browser.display.use_system_colors` to `false` (see [here](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK.2B_themes)).
-* Force enable hardware acceleration ([1](https://support.mozilla.org/en-US/questions/1232970), [2](https://www.reddit.com/r/firefox/comments/8hmnn7/firefox_gpu_acceleration_on_linux/dylmtsn/), [3](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)) (experimental):
-    Set `layers.omtp.enabled`, `layout.display-list.retain`, `gfx.xrender.enabled` to `true`.  
-    Maybe also consider [enabling the Servo renderer](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_WebRender) in the future.
-* [Enable additional media codecs](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_additional_media_codecs):  
-    Set `media.av1.enabled` to `true`. Create a new boolean key called `media.mediasource.ignore_codecs` and set it to `true`.
+* Enable WebRender ([1](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29), [2](https://www.reddit.com/r/firefox/comments/glh5l4/to_use_gpu_in_linux_should_i_enable/fqxb2jg/)):  
+    Set `gfx.webrender.all` to `true`.
 
 ## Setup environment
 
