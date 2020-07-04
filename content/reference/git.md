@@ -4,7 +4,7 @@ title: Git
 
 ## Aliases
 
-```
+```ini
 [alias]
     # See below, depends on the system.
     # fixup = …
@@ -81,7 +81,7 @@ Simply make the desired changes, add them using `git add` and run `git fixup [re
 
 The alias needs to be added to `~/.gitconfig`:
 
-```
+```ini
 [alias]
     # Taken from: https://blog.filippo.io/git-fixup-amending-an-older-commit/ (2019-06-22)
     fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
@@ -89,7 +89,7 @@ The alias needs to be added to `~/.gitconfig`:
 
 This version however unfortunately doesn't work on Ubuntu because they use the *dash* shell as `/bin/sh` (which doesn't support the `${@:2}` expansion). There, you can instead use this simplified version that doesn't support passing additional arguments:
 
-```
+```ini
 [alias]
     # Adapted after: https://blog.filippo.io/git-fixup-amending-an-older-commit/ (2019-06-22)
     # I had to remove the `${@:2}` after `commit` which would have forwarded all remaining args to `commit`
