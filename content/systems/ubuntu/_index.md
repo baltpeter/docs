@@ -41,16 +41,17 @@ Get rid of the Amazon integration by running: `apt purge ubuntu-web-launchers`
 ### Shell
 
 ```sh
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.fonts
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P ~/.fonts
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P ~/.fonts
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/.fonts
+fc-cache -f -v
+
 apt install zsh
+chsh -s /bin/zsh
 ```
 
-Then run the following both as root and user:
 
-```sh
-wget -O ~/.zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc && wget -O ~/.zshrc.local https://git.grml.org/f/grml-etc-core/etc/skel/.zshrc && chsh -s /bin/zsh
-```
-
-In the Terminal, go to *Edit* and *Preferences*. Under the unnamed profile and the *Command* tab, check *Run a custom command instead of my shell* and enter `/bin/zsh`.
 
 ### Gnome
 

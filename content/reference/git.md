@@ -33,28 +33,6 @@ title: Git
     oops = !git commit --amend --no-edit
 ```
 
-## `diff-so-fancy`
-
-Install `diff-so-fancy` ([1](https://github.com/so-fancy/diff-so-fancy/blob/8728c8badd72995f515b247da938e163d959cdf6/README.md)) and configure the `fdiff` alias as described above. 
-
-```sh
-sudo npm install -g diff-so-fancy
-
-git config --global color.ui true
-
-git config --global color.diff-highlight.oldNormal    "red bold"
-git config --global color.diff-highlight.oldHighlight "red bold 52"
-git config --global color.diff-highlight.newNormal    "green bold"
-git config --global color.diff-highlight.newHighlight "green bold 22"
-
-git config --global color.diff.meta       "11"
-git config --global color.diff.frag       "magenta bold"
-git config --global color.diff.commit     "yellow bold"
-git config --global color.diff.old        "red bold"
-git config --global color.diff.new        "green bold"
-git config --global color.diff.whitespace "red reverse"
-```
-
 ## Merging multiple repositories into one
 
 With these instructions, you can combine the histories of multiple Git repositories into a single one. Adapted after [this guide](https://saintgimp.org/2013/01/22/merging-two-git-repositories-into-one-repository-without-losing-file-history/) by SaintGimp.
