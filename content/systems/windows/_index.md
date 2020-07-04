@@ -24,10 +24,6 @@ In the *View* tab, enable 'Show hidden files, folders and drives' and disable 'H
 * Go to the *Personalisation* -> *Start* settings page (`ms-settings:personalization-start`) and disable all options apart from 'Show app list in start menu'.
 * Go to the *Devices* -> *Pen & Windows Ink* settings page (`ms-settings:pen`) and disable 'Show recommend app suggestions'.
 
-## Misc.
-
-* Create a 'god mode' shortcut: On the desktop, create a new folder and name it `God Mode.{ED7BA470-8E54-465E-825C-99712043E01C}`.
-
 ## References:
 
 * https://www.tweakhound.com/2015/12/09/tweaking-windows-10
