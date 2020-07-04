@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "docs.benjamin-altpeter.de"
-# TODO: I am not to happy with that theme. It looks quite nice but is way too heavy and not at all responsive…
-theme = "docdock"
+theme = "docdockdoc"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
