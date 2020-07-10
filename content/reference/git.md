@@ -20,6 +20,8 @@ title: Git
     r = rebase
     rc = rebase --continue
     ra = rebase --abort
+    # Only force-push if remote hasn't diverged, taken from: https://thoughtbot.com/blog/git-push-force-with-lease
+    fp = push --force-with-lease
 
     # Checkout a GitHub PR, taken from: https://github.com/lee-dohm/dotfiles/blob/8d3c59004154571578c2b32df2cdebb013517630/gitconfig#L8, see: https://github.community/t5/How-to-use-Git-and-GitHub/Checkout-a-branch-from-a-fork/td-p/77
     copr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
