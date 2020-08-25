@@ -33,6 +33,8 @@ Configure the following settings in `about:config`:
     Set `middlemouse.paste` to `false`.
 * Enable WebRender ([1](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29), [2](https://www.reddit.com/r/firefox/comments/glh5l4/to_use_gpu_in_linux_should_i_enable/fqxb2jg/)):  
     Set `gfx.webrender.all` to `true`.
+* [Enable hardware video decoding](https://www.omgubuntu.co.uk/2020/08/firefox-80-release-linux-gpu-acceleration):  
+    Set `media.ffmpeg.vaapi.enabled` to `true`.
 
 ## Setup environment
 
