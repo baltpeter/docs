@@ -28,3 +28,7 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 ## Disks
 
 * Remove filesystems on a disk: `wipefs -a /dev/sd[x]` ([1](https://askubuntu.com/a/825032))
+
+## freedesktop.org
+
+* Update cache database of MIME types handled by desktop files: `sudo update-desktop-database` ([1](https://manpages.ubuntu.com/manpages/cosmic/man1/update-desktop-database.1.html))
