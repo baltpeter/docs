@@ -22,3 +22,7 @@ winecfg # Set to Win 7
 * `wineserver -k`: Kill all programs running in the prefix
 * `winefile`: Wine file manager
 * `wine start [explorer|taskmgr|…]`: Start the corresponding program
+
+## Desktop files
+
+Automatically generated `.desktop` files are saved in `~/.local/share/applications/wine`. ([1](https://www.reddit.com/r/winehq/comments/hlivbd/where_does_wine_put_my_desktop_files/fwzssc0/))
