@@ -194,6 +194,15 @@ flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpak
 lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4
 ```
 
+#### ecoDMS
+
+```sh
+wget -O - http://www.ecodms.de/gpg/ecodms.key | apt-key add -
+echo "deb http://www.ecodms.de/ecodms_180964/focal /" > /etc/apt/sources.list.d/ecodms.list
+apt update
+apt install ecodmsclient ecodmsprinter
+```
+
 ## Calendar and contact sync with Nextcloud
 
 In the settings dialog under *Online Accounts*, add a Nextcloud account. If 2FA is enabled for Nextcloud, create a new app password before.
