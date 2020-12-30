@@ -53,7 +53,9 @@ apt install zsh
 chsh -s /bin/zsh
 ```
 
+### Printers
 
+* Disable automatic adding of network printers: `systemctl stop cups-browsed && systemctl disable cups-browsed` ([1](https://askubuntu.com/a/369122))
 
 ### Gnome
 
