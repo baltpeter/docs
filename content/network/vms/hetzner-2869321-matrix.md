@@ -1,5 +1,5 @@
 ---
-title: Matrix (Synpase)
+title: Matrix (Synapse)
 ---
 
 available at matrix.altpeter.me, hosted at Hetzner (IP `116.203.84.17`)
