@@ -1,7 +1,6 @@
 languageCode = "en-us"
 title = "docs.benjamin-altpeter.de"
-# TODO: I am not to happy with that theme. It looks quite nice but is way too heavy and not at all responsive…
-theme = "docdock"
+theme = "docdockdoc"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -17,15 +16,11 @@ email = "hi@bn.al"
 [params]
 editURL = "https://github.com/baltpeter/docs/edit/master/content/"
 historyURL = "https://github.com/baltpeter/docs/commits/master/content/"
-showVisitedLinks = false
-themeStyle = "original"
-themeVariant = "blue"
 ordersectionsby = "weight"
-disableHomeIcon = true
 disableSearch = false
-disableNavChevron = true
-highlightClientSide = false
-menushortcutsnewtab = false
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
