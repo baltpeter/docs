@@ -18,7 +18,7 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 
 ## Ubuntu
 
-* Night light not working correctly: Try `killall gsd-color` ([1](https://askubuntu.com/a/1075340))
+* Night light not working correctly: Try `killall gsd-color` ([1](https://askubuntu.com/a/1075340)) and, if that doesn't work, follow it by `/usr/libexec/gsd-color`
 * Analog sound output not appearing: Try `pactl load-module module-detect` ([2](https://askubuntu.com/a/1184065))
 
 ## Grep
