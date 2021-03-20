@@ -83,6 +83,7 @@ register_new_matrix_user -c /etc/matrix-synapse/homeserver.yaml http://localhost
 ```nginx
 server {
        listen 80;
+       listen [::]:80;  
        server_name altpeter.me;
        return 301 https://$server_name$request_uri;
 }
@@ -92,14 +93,16 @@ server {
         listen [::]:443 ssl http2;
         server_name matrix.altpeter.me;
 
-        ssl_certificate /etc/letsencrypt/live/matrix.altpeter.me/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/matrix.altpeter.me/privkey.pem;
-        ssl_trusted_certificate /etc/letsencrypt/live/matrix.altpeter.me/fullchain.pem;
+        ssl_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/altpeter.me/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
 
-        client_max_body_size 2G;
+  client_max_body_size 2G;
 
         location /_matrix {
                 proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header Host $host;
                 proxy_pass http://localhost:8008;
         }
 
@@ -119,26 +122,17 @@ server {
         listen [::]:8448 ssl default_server;
         server_name altpeter.me;
 
-        ssl_certificate /etc/letsencrypt/live/matrix.altpeter.me/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/matrix.altpeter.me/privkey.pem;
-        ssl_trusted_certificate /etc/letsencrypt/live/matrix.altpeter.me/fullchain.pem;
+        ssl_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/altpeter.me/privkey.pem;
+        ssl_trusted_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
 
         location / {
                 proxy_pass http://localhost:8008;
                 proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header Host $host;
         }
-}
 
-server {
-       listen 443 ssl http2;
-       listen [::]:443 ssl http2;
-       server_name altpeter.me;
-
-       ssl_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
-       ssl_certificate_key /etc/letsencrypt/live/altpeter.me/privkey.pem;
-       ssl_trusted_certificate /etc/letsencrypt/live/altpeter.me/fullchain.pem;
-       
-       return 301 https://benjamin-altpeter.de;
 }
 ```
 
