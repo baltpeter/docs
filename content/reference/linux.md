@@ -40,7 +40,29 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 
 * Update cache database of MIME types handled by desktop files: `sudo update-desktop-database` ([1](https://manpages.ubuntu.com/manpages/cosmic/man1/update-desktop-database.1.html))
 
+## rsync
+
+* Typical `rsync` parameters: `rsync -ah --info=progress2 [source] [dest]`, where:
+    - `-a`: 'archive' (equal to `-rlptgoD`), where in turn:
+        * `-r`: 'recursive'
+        * `-l`: copy symlinks as symlinks
+        * `-p`: preserve permissions
+        * `-t`: preserve modification times
+        * `-g`: preserve group
+        * `-o`: preserve owner (requires root)
+        * `-D`: preserve device (requires root) and special files
+    - `-h`: 'human readable'
+    - `--info=progress2`: display progress info for whole transfer instead of individual files (`--progress`)
+* Additional sometimes useful parameters:
+    - `-v`: print transferred files
+    - `--delete`: delete extraneous files from destination
+    - `-u`: skip files that are newer at destination
+    - `--dry-run`: output changes without actually making them
+    - `--partial`: keep partially transferred files in destination if transfer is aborted
+    - `-z`: compress
+
 ## Misc
 
 * For documenting command line arguments, refer to [docopt](http://docopt.org/).
 * Encrypt files with 7zip (will prompt for password): `7z a -p -mhe -t7z [archive_name].7z [filenames...]` ([1](https://www.techrepublic.com/article/how-to-use-7zip-to-encrypt-files/))
+
