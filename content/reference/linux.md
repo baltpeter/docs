@@ -61,6 +61,13 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
     - `--partial`: keep partially transferred files in destination if transfer is aborted
     - `-z`: compress
 
+## LVM
+
+* To expand a logical volume (for example after cloning to a larger disk):
+    - Resize the partition using gparted (if necessary).
+    - Run `lvresize -l +100%FREE /dev/mapper/[lv]`, e.g. `lvresize -l +100%FREE /dev/mapper/ubuntu--vg-root`.
+    - Run `resize2fs -p /dev/mapper/[lv]`.
+
 ## Misc
 
 * For documenting command line arguments, refer to [docopt](http://docopt.org/).
