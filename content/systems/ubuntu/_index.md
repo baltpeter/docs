@@ -35,6 +35,10 @@ Configure the following settings in `about:config`:
     Set `gfx.webrender.all` to `true`.
 * [Enable hardware video decoding](https://www.omgubuntu.co.uk/2020/08/firefox-80-release-linux-gpu-acceleration):  
     Set `media.ffmpeg.vaapi.enabled` to `true`.
+* [Disable beacon](https://www.privacytools.io/browsers/#about_config):  
+    Set `beacon.enabled` to `false`.
+* [Disable safe browsing](https://www.privacytools.io/browsers/#about_config) (the bad parts, anyway):  
+    Set `browser.safebrowsing.downloads.remote.enabled` to `false` (also do that for Thunderbird).
 
 ## Setup environment
 
