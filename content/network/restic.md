@@ -68,9 +68,7 @@ And the cleanup script: `~/housekeeping-restic-b2.sh`
 
 Create two new checks on [healthchecks.io](https://healthchecks.io/). Then, add the following lines to the crontab using `crontab -e` but set different times:
 
+```sh
+30 5 * * * m=$(/root/backup-restic-b2.sh 2>&1) ; curl -fsS -m 30 --retry 5 --data-raw "$m" https://hc-ping.com/<healthcheck_ID_1>/$?
+00 8 * * 2 m=$(/root/housekeeping-restic-b2.sh 2>&1) ; curl -fsS -m 30 --retry 5 --data-raw "$m" https://hc-ping.com/<healthcheck_ID_2>/$?
 ```
-30 5 * * * /root/backup-restic-b2.sh && curl -fsS --retry 3 <healthcheck URL 1>
-00 8 * * 2 /root/housekeeping-restic-b2.sh && curl -fsS --retry 3 <healthcheck URL 2>
-```
-
-TODO: Reports via email
