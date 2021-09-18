@@ -8,26 +8,25 @@ Important data is backed up to Backblaze B2 using restic. This file describes th
 
 First, create a new [bucket](https://secure.backblaze.com/b2_buckets.htm) (private, disable object lock). Then on the [Application Keys page](https://secure.backblaze.com/app_keys.htm), create a new key (only allow access to the bucket in question, read/write).
 
-```sh
-apt install restic
-
-export B2_ACCOUNT_ID=abc
-export B2_ACCOUNT_KEY=def
-
-# Set a new password and save it in 1Password.
-restic -r b2:<bucket name>:restic-repo init
-```
-
-## Scripts
-
-Create a file `~/env-restic-b2.sh` like so:
+Then, create a file `~/env-restic-b2.sh` like so:
 
 ```sh
 export RESTIC_REPOSITORY=b2:<bucket name>:restic-repo
 export RESTIC_PASSWORD=123
-export B2_ACCOUNT_ID=abc
+export B2_ACCOUNT_ID=abc # Choose a new password and save it in 1Password.
 export B2_ACCOUNT_KEY=def
 ```
+
+Run:
+
+```sh
+apt install restic
+
+source ~/env-restic-b2.sh
+restic init
+```
+
+## Scripts
 
 Create a file `~/backup-restic-b2.sh` like so:
 
