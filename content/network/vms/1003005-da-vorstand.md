@@ -21,6 +21,12 @@ apt-get install x2go-keyring && apt-get update
 
 Install X2Go server: `apt-get install x2goserver x2goserver-xsession`
 
+For XFCE 4.16 (included with Debian 11), use the following workaround to avoid compositing issues [1](https://gitlab.xfce.org/xfce/xfwm4/-/issues/551#note_32708):
+
+```sh
+/usr/bin/xfconf-query -c xfwm4 -p /general/use_compositing -s false
+```
+
 Change the SSH port to `2222` in `/etc/ssh/sshd_config`: `Port 2222` and restart the service: `service ssh restart`
 
 Add a user `vorstand`:
