@@ -18,9 +18,9 @@ The instance is backed up to Backblaze B2 using restic. Follow the steps in [Net
 
 Setup the following cron jobs:
 
-```
-30 5 * * * /root/backup-restic-b2.sh && curl -fsS --retry 3 https://hc-ping.com/89a1c513-eca0-4820-8e97-5932324c1ad6
-00 8 * * 2 /root/housekeeping-restic-b2.sh && curl -fsS --retry 3 https://hc-ping.com/cc1a265b-8ffa-4d8a-a769-931a950dd312
+```sh
+30 5 * * * m=$(/root/backup-restic-b2.sh 2>&1) ; curl -fsS -m 30 --retry 5 --data-raw "$m" https://hc-ping.com/89a1c513-eca0-4820-8e97-5932324c1ad6/$?
+00 8 * * 2 m=$(/root/housekeeping-restic-b2.sh 2>&1) ; curl -fsS -m 30 --retry 5 --data-raw "$m" https://hc-ping.com/cc1a265b-8ffa-4d8a-a769-931a950dd312/$?
 ```
 
 ### Backup script (`backup-restic-b2.sh`)
