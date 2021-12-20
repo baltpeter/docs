@@ -7,4 +7,9 @@ These are the parameters to use when cutting various materials with my [vinyl pl
 ## T-shirt vinyl ("Flexfolie")
 
 * Speed: 200 mm/s  
-* Power: 180 g
+* Power: 240 g
+
+## Inket label paper
+
+* Speed: 150 mm/s
+* Power: 120 g
