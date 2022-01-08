@@ -21,3 +21,10 @@ bought from [here](https://www.ebay.de/itm/161704835355)
 * Masking: no
 
 [potential source](https://www.aliexpress.com/item/Portable-4-in-1-Bottle-Opener-Key-Ring-Chain-Keyring-Keychain-Metal-Beer-Bar-Tool-Claw/1000007703071.html)
+
+## Pencils
+
+* Power: 50%
+* Speed: 500 mm/s
+* Air: no
+* Masking: no
