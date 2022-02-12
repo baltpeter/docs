@@ -181,6 +181,10 @@ curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-
 chmod a+rx /usr/local/bin/youtube-dl
 
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+curl https://raw.githubusercontent.com/srevinsaju/zap/main/install.sh | sudo bash -s
+# As local user.
+zap daemon --install
 ```
 
 ### Optional
@@ -198,15 +202,9 @@ snap install insomnia veracrypt
 flatpak install --from https://tabos.gitlab.io/project/rogerrouter/roger.flatpakref
 
 lpadmin -p Roger-Router-Fax -m drv:///sample.drv/generic.ppd -v socket://localhost:9100/ -E -o PageSize=A4
-```
 
-#### ecoDMS
-
-```sh
-wget -O - http://www.ecodms.de/gpg/ecodms.key | apt-key add -
-echo "deb http://www.ecodms.de/ecodms_180964/focal /" > /etc/apt/sources.list.d/ecodms.list
-apt update
-apt install ecodmsclient ecodmsprinter
+zap install cura
+zap install --github --from logseq/logseq
 ```
 
 ## Calendar and contact sync with Nextcloud
