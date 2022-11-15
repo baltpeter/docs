@@ -10,7 +10,7 @@ Mostly follows the [install guide](https://github.com/xwiki-labs/cryptpad/wiki/I
 
 ```sh
 apt install git build-essential
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 apt install nodejs
 npm install -g bower
 git clone https://github.com/xwiki-labs/cryptpad.git /root/cryptpad
