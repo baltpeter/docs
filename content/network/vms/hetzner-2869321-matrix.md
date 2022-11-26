@@ -172,6 +172,55 @@ rm -R /var/lib/matrix-synapse/media.old
 Check if there are [update notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst) for the new version.  
 Updates are done using APT: `apt update && apt upgrade`
 
+### Upgrading Postgres
+
+Synapse will refuse to start if the Postgres version is too low. Upgrade as follows ([1](https://web.archive.org/web/20221126103804/https://www.paulox.net/2022/04/28/upgrading-postgresql-from-version-13-to-14-on-ubuntu-22-04-jammy-jellyfish/)):
+
+Create a Hetzner snapshot just in case. Then, first stop Synapse:
+
+```sh
+systemctl stop matrix-synapse.service
+```
+
+A newer Postgres version may have already been installed in an Ubuntu upgrade. If the newer version has not been installed yet, do that:
+
+```sh
+apt install postgresql-<new version>
+```
+
+Installing the new version will automatically create an empty cluster. Check using:
+
+```sh
+pg_lsclusters
+```
+
+If you don't know which version holds the current database, you can check their disk size:
+
+```sh
+du -sh /var/lib/postgresql/*
+```
+
+Remove the emtpy cluster and upgrade the existing one for the older version:
+
+```sh
+pg_dropcluster <new version> main --stop
+pg_upgradecluster <old version> main
+```
+
+Observe that the new cluster is now online on port 5432, start Synapse and verify that everything works:
+
+```sh
+pg_lsclusters
+systemctl start matrix-synapse.service
+```
+
+Then, you can remove the old cluster and the corresponding packages:
+
+```sh
+pg_dropcluster <old version> main --stop
+apt purge postgresql-<old version> postgresql-client-<old version>
+```
+
 ### Config merge
 
 When the config changes, APT will usually ask you what to do. First, choose `D` to see if the changes are signficant. If so, make note of the config options we need to keep. These are usually:
