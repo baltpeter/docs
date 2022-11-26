@@ -2,7 +2,7 @@
 title: Matrix (Synapse)
 ---
 
-available at matrix.altpeter.me, hosted at Hetzner (IP `116.203.84.17`)
+available at matrix.altpeter.me, hosted at Hetzner (IP `116.203.84.17`), media stored on Hetzner volume `synapse-data`
 
 ## Setup
 
@@ -54,6 +54,7 @@ exit
 sudo apt install python3-psycopg2
 
 sudo nano /etc/matrix-synapse/homeserver.yaml
+# Set: `max_upload_size: 100M`
 # Set the `database` section as follows:
 # database:
 #     name: psycopg2
@@ -136,6 +137,36 @@ server {
 }
 ```
 
+## Move media to a Hetzner volume
+
+Create the volume `synapse-data` in the Hetzner web interface. Then, mount it like this (see web interface for volume ID):
+
+```sh
+mkfs.ext4 -F /dev/disk/by-id/scsi-0HC_Volume_25004672
+mkdir /mnt/synapse-data
+echo "/dev/disk/by-id/scsi-0HC_Volume_25004672 /mnt/synapse-data ext4 discard,nofail,defaults 0 0" >> /etc/fstab
+mount -a
+```
+
+Copy the existing media over:
+
+```sh
+systemctl stop matrix-synapse.service
+cp -R /var/lib/matrix-synapse/media /mnt/synapse-data
+chown -R matrix-synapse:nogroup /mnt/synapse-data/media
+mv /var/lib/matrix-synapse/media /var/lib/matrix-synapse/media.old
+```
+
+In `/etc/matrix-synapse/homeserver.yaml`, set `media_store_path` to `/mnt/synapse-data/media`.
+
+Start Synapse (`systemctl start matrix-synapse.service`) and check whether media still load.
+
+If everything still works, you can delete the old media folder:
+
+```sh
+rm -R /var/lib/matrix-synapse/media.old
+``` 
+
 ## Upgrading
 
 Check if there are [update notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst) for the new version.  
@@ -161,6 +192,9 @@ database:
 enable_registration: false
 
 suppress_key_server_warning: true
+
+media_store_path: "/mnt/synapse-data/media"
+max_upload_size: 100M
 
 # The email settings don't currently work and cause the service to crash on startup for some reason. :(
 # email:
