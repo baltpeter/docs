@@ -167,6 +167,17 @@ If everything still works, you can delete the old media folder:
 rm -R /var/lib/matrix-synapse/media.old
 ``` 
 
+## Export user data
+
+Synapse has an admin cmd that can [export user data](https://matrix-org.github.io/synapse/v1.78/usage/administration/admin_faq.html#how-can-i-export-user-data):
+
+```
+source /opt/venvs/matrix-synapse/bin/activate
+python -m synapse.app.admin_cmd -c /etc/matrix-synapse/homeserver.yaml -c /etc/matrix-synapse/conf.d export-data "<user ID>"
+```
+
+This will create folder `/tmp/synapse-exfiltrate__<…>` (a different output oath can be specified with `--output-directory`) containing the exported data (may take a while). Unfortunately, it [only works for local users](https://github.com/matrix-org/synapse/blob/1c95ddd09bbc46046a3412e7bb03a87aa3b6f65a/synapse/handlers/admin.py#L120).
+
 ## Upgrading
 
 Check if there are [update notes](https://github.com/matrix-org/synapse/blob/master/UPGRADE.rst) for the new version.  
