@@ -33,6 +33,7 @@ The data is backed up to Backblaze B2 using restic. Follow the steps in [Net/Res
 
 set -e
 
+source /root/env-backghup.sh
 source /root/env-restic-b2.sh
 
 /usr/bin/backghup --extract --out-dir /root/gh-backups --exclude Raabeschule --exclude getbookshelf --exclude Keeping-Privacy-Labels-Honest
