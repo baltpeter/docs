@@ -37,3 +37,13 @@ TODO
 
 Remember to explain everything in great detail and don't leave anything out, especially things that might not be obvious (read the code carefully). Do feel free to add additional sections if you think it makes sense. Try to use different examples than those in the docstrings. If anything is unclear, ask me instead of guessing.
 ```
+
+## Summarize tweasel update into Mastodon thread
+
+```
+TODO
+
+---
+
+Write a Mastodon thread about the update blog post above. Pick out the most interesting changes and technical changes. Make the thread between two and five posts long. Each post can have at most 500 characters. Write in the "we" perspective and focus on what actually happened in this update rather than the project as a whole.
+```
