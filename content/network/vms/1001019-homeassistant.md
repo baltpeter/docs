@@ -48,8 +48,9 @@ light:
     payload_off: "OFF"
     payload_available: "Online"
     payload_not_available: "Offline"
-    retain: true
 ```
+
+Note: I previously had `retain: true`. That turned out to be a mistake that caused ghost switching. For more details and how to clear the retained messages, see [1](https://www.youtube.com/watch?v=dbSw6VkI-x4).
 
 Restart hass: `systemctl restart homeassistent.service`.
 
