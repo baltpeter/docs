@@ -20,6 +20,23 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 
 * Night light not working correctly: Try `killall gsd-color` ([1](https://askubuntu.com/a/1075340)) and, if that doesn't work, follow it by `/usr/libexec/gsd-color`
 * Analog sound output not appearing: Try `pactl load-module module-detect` ([2](https://askubuntu.com/a/1184065))
+* Wired network connection not working anymore after sleep (shows up as "Cable unplugged" in Settings): I've had this happen every once in a while. The typical commands to restart various networking services (e.g. `systemctl restart NetworkManager`, `ip link set enp7s0 down; ip link set enp7s0 up`) don't work for me in this case. So far, I've always solved this by restarting the computer, but it can actually also be fixed by just reloading the driver ([2](https://askubuntu.com/a/1030154), [3](https://askubuntu.com/a/1029269)):
+
+  First find out the driver in use by running `sudo lshw -C network`. There will be a line that contains `driver=<driver>` (in my case `igb`).
+
+  Then, unload and reload the driver:
+
+  ```sh
+  sudo modprobe -r <driver>
+  sudo modprobe -i <driver>
+  ```
+
+  So, in my case:
+
+  ```sh
+  sudo modprobe -r igb
+  sudo modprobe -i igb
+  ```
 
 ## Grep
 
