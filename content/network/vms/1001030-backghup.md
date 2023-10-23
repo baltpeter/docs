@@ -10,7 +10,7 @@ Based on [1](https://web.archive.org/web/20230319172300/https://github.com/baltp
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-apt install nodejs
+apt install nodejs retry
 
 npm i -g backghup
 
@@ -24,7 +24,7 @@ source ~/env-backghup.sh
 backghup --extract --out-dir ~/gh-backups
 ```
 
-The data is backed up to Backblaze B2 using restic. Follow the steps in [Net/Restic]({{< ref "network/restic" >}}). Use the backup script below.
+The data is backed up to Backblaze B2 using restic. Follow the steps in [Net/Restic]({{< ref "network/restic" >}}). Use the backup script below. Use `retry --delay 10 --times 3 -- /root/backup-restic-b2.sh` as the command in the cronjob.
 
 ### Backup script (`backup-restic-b2.sh`)
 
