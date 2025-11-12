@@ -250,3 +250,9 @@ systemctl --user start syncthing.service
 Increase the inotify limit: `echo "fs.inotify.max_user_watches=204800" | tee -a /etc/sysctl.conf`
 
 The web UI is then available at `http://127.0.0.1:8384/`.
+
+### Pipx
+
+`apt install pipx`
+
+`pipx install yt-dlp; pipx install mitmproxy; pipx install mapillary-tools; pipx install pywhat; pipx install frida-tools; pipx install b2; pipx install hashid; pipx install nvitop; pipx install pipenv; pipx install datasette; pipx install sqlite-utils; pipx install pymobiledevice3; pipx install archivenow; pipx install pypeek; pipx install savepagenow`
