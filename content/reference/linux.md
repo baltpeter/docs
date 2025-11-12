@@ -90,3 +90,6 @@ If an NFS share hangs, it can be unmounted as follows: Find the mount point usin
 * For documenting command line arguments, refer to [docopt](http://docopt.org/).
 * Encrypt files with 7zip (will prompt for password): `7z a -p -mhe -t7z [archive_name].7z [filenames...]` ([1](https://www.techrepublic.com/article/how-to-use-7zip-to-encrypt-files/))
 
+## Poppler
+
+* Embed fonts into a PDF document: `pdftocairo -pdf in.pdf out.pdf` ([1](https://stackoverflow.com/a/27585033))
