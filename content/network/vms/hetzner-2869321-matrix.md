@@ -167,6 +167,16 @@ If everything still works, you can delete the old media folder:
 rm -R /var/lib/matrix-synapse/media.old
 ``` 
 
+## Expand Hetzner volume
+
+In the Hetzner web interface, expand the volume `synapse-data` to the desired size.
+
+Then, expand the filesystem:
+
+```sh
+resize2fs /dev/disk/by-id/scsi-0HC_Volume_25004672
+```
+
 ## Export user data
 
 Synapse has an admin cmd that can [export user data](https://matrix-org.github.io/synapse/v1.78/usage/administration/admin_faq.html#how-can-i-export-user-data):
